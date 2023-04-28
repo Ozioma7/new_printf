@@ -2,7 +2,7 @@
 /**
  * handle_print - Prints an argument based on its type
  * @fmt: Formatted string in which to print the arguments.
- * @lists: List of arguments to be printed.
+	 * @lists: List of arguments to be printed.
  * @ind: ind.
  * @buffer: Buffer array to handle print.
  * @flags: Calculates active flags
@@ -23,9 +23,9 @@ int handle_print(const char *fmt, int *ind, va_list lists, char buffer[],
 		{'X', print_hexa_upper}, {'p', print_pointer}, {'S', print_non_printable},
 		{'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
 	};
-	for (a = 0; fmt_types[a].fmt != '\0'; a++;
+	for (a = 0; fmt_types[a].fmt != '\0'; a++)
 			if (fmt[*ind] == fmt_types[a].fmt)
-			return (fmt_types[i].fn(lists, buffer, flags, width, precision, size));
+			return (fmt_types[a].fn(lists, buffer, flags, width, precision, size));
 
 			if (fmt_types[a].fmt == '\0')
 			{
@@ -45,7 +45,7 @@ int handle_print(const char *fmt, int *ind, va_list lists, char buffer[],
 					}
 					unknow_len += write(1, &fmt[*ind], 1);
 					return (unknow_len);
-						}
+				}
 	return (printed_chars);
 }
 

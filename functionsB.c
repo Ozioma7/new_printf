@@ -17,8 +17,8 @@ int print_pointer(va_list classes, char buffer[],
 	char extra_c = 0, padd = ' ';
 	int ind = BUFF_SIZE - 2, length = 2, padd_start = 1;
 	unsigned long num_addrs;
-	char map_to[] = "0123456789abcdef",
-	     void *addrs = va_arg(types, void *);
+	char map_to[] = "0123456789abcdef";
+	void *addrs = va_arg(classes, void *);
 
 	UNUSED(width);
 	UNUSED(size);
@@ -66,7 +66,7 @@ int print_non_printable(va_list classes, char buffer[],
 	UNUSED(flags);
 	UNUSED(width);
 	UNUSED(precision);
-	NUSED(size);
+	UNUSED(size);
 
 	if (str == NULL)
 		return (write(1, "(null)", 6));
