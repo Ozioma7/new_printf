@@ -156,11 +156,11 @@ int write_unsgnd(int is_negative, int ind,
 	UNUSED(is_negative);
 	UNUSED(size);
 
-	if (precision == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
+	if (precision == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0') {
 		return (0);
 
 		if (precision > 0 && precision < lenght)
-			pad = ' ';
+			pad = ' '; }
 
 	while (precision > lenght)
 	{
