@@ -23,17 +23,16 @@ int handle_print(const char *fmt, int *ind, va_list lists, char buffer[],
 		{'X', print_hexa_upper}, {'p', print_pointer}, {'S', print_non_printable},
 		{'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
 	};
-	for {(a = 0; fmt_types[a].fmt != '\0'; a++)}
+	for (a = 0; fmt_types[a].fmt != '\0'; a++)
 	{
 			if (fmt[*ind] == fmt_types[a].fmt)
 
 			return (fmt_types[a].fn(lists, buffer, flags, width, precision, size));
 	}
-
-			if (fmt_types[a].fmt == '\0')
-			{
-				if (fmt[*ind] == '\0')
-					return (-1);
+	if (fmt_types[a].fmt == '\0')
+	{
+		if (fmt[*ind] == '\0')
+			return (-1);
 				unknow_len += write(1, "%%", 1);
 					if (fmt[*ind - 1] == ' ')
 						unknow_len += write(1, " ", 1);
